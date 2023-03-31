@@ -1,0 +1,84 @@
+footer{
+	height: 10vh;
+	position: fixed;
+	bottom: 0vh;
+	background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), black);
+	color: white;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100vw;
+	display: flex;
+	font-size: 2vw;
+	padding: 2vw;
+	z-index: 1;
+}
+
+footer a{
+	color: white;
+	text-decoration: none;
+}
+
+
+footer .dropdown{
+	height: 5vw;
+	width: 66vw;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0 1vw 0 1vw;
+	outline: solid 0px white;
+}
+
+
+footer h2:hover{
+	text-decoration: underline .3vw;
+	text-underline-offset: .2vw;
+}
+
+footer .dropdown-content {
+  	position: relative;
+  	width: 66vw;
+  	background-color: black;
+  	outline: solid .3vw white;
+  	padding: inherit;
+  	margin: 0 0 2vw 0;
+  	z-index: 1;
+}
+
+ footer .current{
+ 	display: flex;
+ 	justify-content: space-between;
+ 	align-items: center;
+ 	width: 100%;
+ 	height: 100%;
+ }
+
+ footer input{
+	display: flex;
+	justify-content: center;
+	background-color: transparent;
+	color: white;
+	width: 100%;
+	height: 100%;
+	font-size: 3.2vw;
+	border: none;
+	text-transform: uppercase;
+}
+
+footer input:hover{
+	text-decoration: underline;
+}
+
+.inactive{
+  display: none;
+}
+
+footer .dropdown:hover{
+  cursor: pointer;
+  outline: solid .3vw white;
+}
+
+footer #arrow:hover{
+	text-decoration: none;
+}

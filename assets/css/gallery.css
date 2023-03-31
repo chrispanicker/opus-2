@@ -1,0 +1,27 @@
+#gallery{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+#gallery .media{
+	width: 30vw;
+	transition: width .2s ease;
+	padding: 2vw 0 0 0;
+}
+
+#gallery .zoom{
+	position: fixed;
+	top: 0;
+	width: 80vw;
+	padding: 2vw 0 0 0;
+}
+
+#gallery .media:hover{
+	cursor: zoom-in;
+	width: 35vw;
+}
+
+#gallery .zoom:hover{
+	cursor: zoom-out;
+}
