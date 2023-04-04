@@ -4,52 +4,28 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CHRIS PANICKER</title>
+	<link rel="stylesheet" type="text/css" href=assets/css/colors.css>
 	<link rel="stylesheet" type="text/css" href=assets/css/fonts.css>
 	<link rel="stylesheet" type="text/css" href=assets/css/styles.css>
-	<link rel="stylesheet" type="text/css" href=assets/css/footer.css>
+	<link rel="stylesheet" type="text/css" href=assets/css/header.css>
+
 </head>
 <body>
-
-<main>
-	<h2><a href="projects/decks.html">DECKS</a><img src="../assets/images/icons/icons-01.png"></h2>
-	<h2><a href="projects/dilly.html">DILLY DALLY</a><img src="../assets/images/icons/icons-04.png"></h2>
-	<h2><a href="projects/skate.html">RAPHAEL'S SCHOOL OF SKATE</a><img src="../assets/images/icons/icons-08.png"></h2>
-	<h2><a href="projects/ten.html">TEN POINT PROGRAM</a><img src="../assets/images/icons/icons-05.png"></h2>
-	<h2><a href="projects/wiki.html">THE RELIABILITY OF WIKIPEDIA</a><img src="../assets/images/icons/icons-07.png"></h2>
-	<h2><a href="projects/blue.html">THE MUSEUM OF BLUE NOTE</a><img src="../assets/images/icons/icons-03.png"></h2>
-	<h2><a href="projects/back.html">THE BACK OF MY HAND</a><img src="../assets/images/icons/icons-02.png"></h2>
-
-</main>
-
-<section id="about">
-<h2>ABOUT</h2><br>
-
-<p>Hello, I'm chris. I'm currently in my final year of Communication Design at Parsons. <br><br> 
-	I am a multidisciplinary designer, working between mediums such as code, animation, branding, and whatever else I find interesting. I try to think of all of my work as holistically <change></change> reaching and engaging with people in some capacity.</p><br><br>
-
-<h2>What do I do?</h2>
-<p>I've worked on branding, web design, animated short films, 3D art, photography, and video. I also have worked as a freelance designer, photographer, and videographer.</p><br><br>
-<p>I work with the Adobe Creative Suite, AutoDesk Maya, Unreal, HTML, CSS, Javascript. </p><br><br>
-
-<h2>Reach out, I'd love to chat!</h2>
-<a href="mailto:hello@panicker.design">hello@panicker.design</a>	
-</section>
-
-<footer>
+<header>
 	<!-- <p><change></change>&nbsp<change></change> IS A </p> -->
-	<a href=../../index.html><h2 id="chrisIs">CHRIS PANICKER IS A</h2></a>
+	<a href=../../index.html><change></change>&nbsp;<change></change>&nbsp;&nbsp;<h2 id="chrisIs"></a>IS A</h2>
 	<div class=dropdown>
 		
 		<div class=current>
 			<h2>GRAPHIC DESIGNER</h2>
-			<h2 id="arrow" class="up">&nbsp;&uarr;</h2>
+			<h2 id="arrow" class="up">&nbsp;&darr;</h2>
 		</div>
 		<div class="dropdown-content inactive">
 		
 		</div>
 	</div>
 
-</footer>
+</header>
 
 <script type="text/javascript">
 	let whatAmI = ["GRAPHIC DESIGNER", "ANIMATOR", "FRONT-END CODER", "AMATEUR SKATER", "ENTER YOUR OWN..."]; 
@@ -66,10 +42,10 @@
 
 		//arrows
 		if(arrow.classList.contains("up")){
-			arrow.innerHTML = "&nbsp;&darr;"
+			arrow.innerHTML = "&nbsp;&uarr;"
 			arrow.classList.toggle("up")
 		}else{
-			arrow.innerHTML = "&nbsp;&uarr;"
+			arrow.innerHTML = "&nbsp;&darr;"
 			arrow.classList.toggle("up")
 		}
 
@@ -128,24 +104,51 @@
 
 function dropWidth(bool){
 	if(bool){
-		chrisIs.innerHTML = "CHRIS PANICKER IS AN"
-		dropContent.style.width = "64.2vw";
-		dropParent.style.width = "64.2vw";
+		chrisIs.innerHTML = "IS AN"
 	}else{
-		chrisIs.innerHTML = "CHRIS PANICKER IS A"
-		dropContent.style.width = "66vw";
-		dropParent.style.width = "66vw";
+		chrisIs.innerHTML = "IS A"
 	}
 }
 
 
 
-
-
-
-
-
 </script>
+<footer><button id="button">ABOUT</button></footer>
+<main>
+	<h2><a href="projects/decks.html">DECKS</a><img src="../assets/images/icons/icons-01.png"></h2>
+	<h2><a href="projects/dilly.html">DILLY DALLY</a><img src="../assets/images/icons/icons-04.png"></h2>
+	<h2><a href="projects/skate.html">RAPHAEL'S SCHOOL OF SKATE</a><img src="../assets/images/icons/icons-08.png"></h2>
+	<h2><a href="projects/ten.html">TEN POINT PROGRAM</a><img src="../assets/images/icons/icons-05.png"></h2>
+	<h2><a href="projects/wiki.html">THE RELIABILITY OF WIKIPEDIA</a><img src="../assets/images/icons/icons-07.png"></h2>
+	<h2><a href="projects/blue.html">THE MUSEUM OF BLUE NOTE</a><img src="../assets/images/icons/icons-03.png"></h2>
+	<h2><a href="projects/back.html">THE BACK OF MY HAND</a><img src="../assets/images/icons/icons-02.png"></h2>
+
+</main>
+
+<section id="about">
+<h2>ABOUT</h2><br>
+
+<p>Hello, I'm Chris. I'm currently in my final year of Communication Design at Parsons. <br><br> 
+	I am a multidisciplinary designer, working between mediums such as code, animation, branding, and whatever else I find interesting. I try to think of all of my work as holistically <change></change> reaching and engaging with people in some capacity.</p><br><br>
+
+<h2>WHAT DO I DO?</h2>
+<p>I've worked on branding, web design, animated short films, 3D art, photography, and video. I also have worked as a freelance designer, photographer, and videographer.</p>
+<p>Most often, I use the Adobe Creative Suite, AutoDesk Maya, Unreal, HTML, CSS, Javascript. </p><br><br>
+
+<h2>REACH OUT, I'D LOVE TO CHAT!</h2>
+<a href="mailto:hello@panicker.design">hello@panicker.design</a>	
+</section>
+<script>
+	let aboutButton = document.querySelector("footer button")
+	let aboutSect = document.querySelector("#about")		
+	
+	aboutButton.addEventListener("click", ()=>{
+		const yOffset = -300; 
+		const y = aboutSect.getBoundingClientRect().top + window.pageYOffset + yOffset;
+		window.scrollTo({top: y, behavior: 'smooth'});
+	});
+</script>
+
 
 
 <script type="text/javascript">
@@ -153,7 +156,7 @@ function dropWidth(bool){
 	//this module is what makes the logo letters change fonts on hover
 	
 	let logoDiv = document.querySelector("#logo");
-	let changeStrs = ["interactive,"];
+	let changeStrs = ["chris", "panicker", "interactive,"];
 	let changeEls = document.querySelectorAll('change');
 	let fontList = ["FrGth-Cond", "sans-serif", 'baldur', 'hobeaux-roco', 'picnic', 'sans-black', 'bodoni-mt', 'serif'];
 	let me = "Chris\xa0Panicker";

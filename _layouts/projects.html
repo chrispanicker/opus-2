@@ -4,16 +4,34 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CHRIS PANICKER</title>
+	<link rel="stylesheet" type="text/css" href={{ "../assets/css/colors.css" | relativeurl }}>
+	<link rel="stylesheet" type="text/css" href="../assets/css/header.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/footer.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/projects.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/gallery.css">
 
+
 </head>
 <body>
+	<header><a href=../index.html><change></change>&nbsp;<change></change></a></header>
 <main>
-	<header><h2>{{page.title || upcase}}</h2>		<p>{{page.description || upcase}}</p>	<a href="" id="link">{{page.link }}</a></header>
+	<div class="projectHead">
+		<h2>{{page.title || upcase}}</h2>
+		<div class="projectInfo">		
+			<div>
+				<p class="projectDesc">{{page.description || upcase}}&nbsp;
+					<button id="more">MORE</button>
+				</p>
+				<p class="projectFull hide">{{page.full}}</p>
+			</div>
+			<p>{{page.medium || upcase}}</p>	
+		</div>	
+		<div class="projectInfo">
+			<p>{{page.year || upcase}}</p>
+			<a href="" id="link">{{page.link }}</a>
+		</div>
+	</div>
 
 
 	<span id ="gallery"></span>
@@ -26,5 +44,7 @@
 		let link = document.querySelector("#link");
 		link.href = projectLink;
 	</script>
+{% include namechange.html %}
+{% include hide.html %}
 </body>
 </html>

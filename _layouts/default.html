@@ -4,15 +4,18 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CHRIS PANICKER</title>
+	<link rel="stylesheet" type="text/css" href={{ "assets/css/colors.css" | relativeurl }}>
 	<link rel="stylesheet" type="text/css" href={{ "assets/css/fonts.css" | relativeurl }}>
 	<link rel="stylesheet" type="text/css" href={{ "assets/css/styles.css" | relativeurl }}>
-	<link rel="stylesheet" type="text/css" href={{ "assets/css/footer.css" | relativeurl }}>
+	<link rel="stylesheet" type="text/css" href={{ "assets/css/header.css" | relativeurl }}>
+
 </head>
 <body>
-
+{% include header.html %}
+<footer><button id="button">ABOUT</button></footer>
 {{page.content}}
+{% include about.html %}
 
-{% include footer.html %}
 {% include namechange.html %}
 </body>
 </html>

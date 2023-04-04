@@ -1,18 +1,18 @@
-<footer>
+<header>
 	<!-- <p><change></change>&nbsp<change></change> IS A </p> -->
-	<a href={{"../../index.html"|| relativeurl }}><h2 id="chrisIs">CHRIS PANICKER IS A</h2></a>
+	<a href={{"../../index.html"|| relativeurl }}><change></change>&nbsp;<change></change>&nbsp;&nbsp;<h2 id="chrisIs"></a>IS A</h2>
 	<div class=dropdown>
 		
 		<div class=current>
 			<h2>GRAPHIC DESIGNER</h2>
-			<h2 id="arrow" class="up">&nbsp;&uarr;</h2>
+			<h2 id="arrow" class="up">&nbsp;&darr;</h2>
 		</div>
 		<div class="dropdown-content inactive">
 		
 		</div>
 	</div>
 
-</footer>
+</header>
 
 <script type="text/javascript">
 	let whatAmI = ["GRAPHIC DESIGNER", "ANIMATOR", "FRONT-END CODER", "AMATEUR SKATER", "ENTER YOUR OWN..."]; 
@@ -29,10 +29,10 @@
 
 		//arrows
 		if(arrow.classList.contains("up")){
-			arrow.innerHTML = "&nbsp;&darr;"
+			arrow.innerHTML = "&nbsp;&uarr;"
 			arrow.classList.toggle("up")
 		}else{
-			arrow.innerHTML = "&nbsp;&uarr;"
+			arrow.innerHTML = "&nbsp;&darr;"
 			arrow.classList.toggle("up")
 		}
 
@@ -91,20 +91,11 @@
 
 function dropWidth(bool){
 	if(bool){
-		chrisIs.innerHTML = "CHRIS PANICKER IS AN"
-		dropContent.style.width = "64.2vw";
-		dropParent.style.width = "64.2vw";
+		chrisIs.innerHTML = "IS AN"
 	}else{
-		chrisIs.innerHTML = "CHRIS PANICKER IS A"
-		dropContent.style.width = "66vw";
-		dropParent.style.width = "66vw";
+		chrisIs.innerHTML = "IS A"
 	}
 }
-
-
-
-
-
 
 
 

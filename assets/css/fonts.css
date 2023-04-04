@@ -9,6 +9,11 @@
 }
 
 @font-face {
+  font-family: 'FrGth-DemiCond';
+  src:  url('../fonts/FRAMDCN.woff') format('woff');
+}
+
+@font-face {
   font-family: 'baldur';
   src:  url('../fonts/baldur.ttf') format('ttf');
 }

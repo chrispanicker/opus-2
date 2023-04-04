@@ -1,52 +1,55 @@
-footer{
-	height: 10vh;
+header{
 	position: fixed;
-	bottom: 0vh;
-	background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), black);
-	color: white;
+	top: 0vh;
+	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0), var(--secondary));
+	color: var(--primary);
 	justify-content: flex-start;
 	align-items: center;
 	width: 100vw;
 	display: flex;
 	font-size: 2vw;
-	padding: 2vw;
+	padding: 5vh 0 0 5vw;
 	z-index: 1;
+	text-transform: uppercase;
 }
 
-footer a{
-	color: white;
+header a{
+	color: var(--primary);
 	text-decoration: none;
 }
 
 
-footer .dropdown{
+header .dropdown{
 	height: 5vw;
-	width: 66vw;
 	display: flex;
-	flex-direction: column-reverse;
+	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	padding: 0 1vw 0 1vw;
-	outline: solid 0px white;
+	outline: dotted 0px var(--primary);
 }
 
 
-footer h2:hover{
-	text-decoration: underline .3vw;
+header h2:hover{
+	text-decoration: underline .2vw;
 	text-underline-offset: .2vw;
 }
 
-footer .dropdown-content {
+
+header #chrisIs{
+	text-decoration: none;
+}
+
+header .dropdown-content {
   	position: relative;
-  	width: 66vw;
-  	background-color: black;
-  	outline: solid .3vw white;
+  	background-color: var(--secondary);
+  	outline: dotted .2vw var(--primary);
   	padding: inherit;
   	margin: 0 0 2vw 0;
   	z-index: 1;
 }
 
- footer .current{
+ header .current{
  	display: flex;
  	justify-content: space-between;
  	align-items: center;
@@ -54,11 +57,11 @@ footer .dropdown-content {
  	height: 100%;
  }
 
- footer input{
+ header input{
 	display: flex;
 	justify-content: center;
 	background-color: transparent;
-	color: white;
+	color: var(--primary);
 	width: 100%;
 	height: 100%;
 	font-size: 3.2vw;
@@ -66,7 +69,7 @@ footer .dropdown-content {
 	text-transform: uppercase;
 }
 
-footer input:hover{
+header input:hover{
 	text-decoration: underline;
 }
 
@@ -74,11 +77,16 @@ footer input:hover{
   display: none;
 }
 
-footer .dropdown:hover{
+header .dropdown:hover{
   cursor: pointer;
-  outline: solid .3vw white;
+  outline: dotted .2vw var(--primary);
 }
 
-footer #arrow:hover{
+header #arrow:hover{
 	text-decoration: none;
 }
+
+header change{
+	font-size: 3.2vw;
+}
+

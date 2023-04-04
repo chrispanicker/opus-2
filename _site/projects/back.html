@@ -4,16 +4,34 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CHRIS PANICKER</title>
+	<link rel="stylesheet" type="text/css" href=../assets/css/colors.css>
+	<link rel="stylesheet" type="text/css" href="../assets/css/header.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/footer.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/projects.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/gallery.css">
 
+
 </head>
 <body>
+	<header><a href=../index.html><change></change>&nbsp;<change></change></a></header>
 <main>
-	<header><h2>THE BACK OF MY HAND</h2>		<p>AN INTERACTIVE MEMOIR, REFLECTING ON BEING A SECOND-GENERATION INDIAN AMERICAN.</p>	<a href="" id="link">https://chrispanicker.github.io/thebackofmyhand/</a></header>
+	<div class="projectHead">
+		<h2>THE BACK OF MY HAND</h2>
+		<div class="projectInfo">		
+			<div>
+				<p class="projectDesc">AN INTERACTIVE MEMOIR, REFLECTING ON BEING A SECOND-GENERATION INDIAN AMERICAN.&nbsp;
+					<button id="more">MORE</button>
+				</p>
+				<p class="projectFull hide">The Back of My Hand is an experiment in interactive storytelling. It recounts specific memories, and general thoughts that I've had about myself and my racial identity.<br><br>Made with HTML, CSS, and JavaScript.</p>
+			</div>
+			<p>WEB/GRAPHICS</p>	
+		</div>	
+		<div class="projectInfo">
+			<p>2021</p>
+			<a href="" id="link">https://chrispanicker.github.io/thebackofmyhand/</a>
+		</div>
+	</div>
 
 
 	<span id ="gallery"></span>
@@ -59,5 +77,88 @@
 		let link = document.querySelector("#link");
 		link.href = projectLink;
 	</script>
+
+
+<script type="text/javascript">
+	//hello curious friend :) 
+	//this module is what makes the logo letters change fonts on hover
+	
+	let logoDiv = document.querySelector("#logo");
+	let changeStrs = ["CHRIS", "PANICKER"];
+	let changeEls = document.querySelectorAll('change');
+	let fontList = ["FrGth-Cond", "sans-serif", 'baldur', 'hobeaux-roco', 'picnic', 'sans-black', 'bodoni-mt', 'serif'];
+	let me = "Chris\xa0Panicker";
+	
+	
+	//-------------------------------------------------------------
+	class fontChange {
+	
+		constructor(str, parent, elementType){
+			this.str = str;
+			this.parent = parent;
+			this.element = elementType;
+			this.index = 0;
+		}
+	
+		render(){
+			// this.intervalStart();
+			this.loopThruStr();
+		}
+	
+		loopThruStr(){
+			for(let i=0; i<this.str.length; i++){
+				let thisLetter = document.createElement(this.element);
+				thisLetter.innerHTML = this.str[i];
+				thisLetter.addEventListener("mouseenter", () =>{
+					this.intervalStart(thisLetter);
+				})
+				
+				this.parent.append(thisLetter);
+			};
+		}
+	
+		intervalStart(thisLetter){
+			let interval = setInterval(()=>{
+				this.index++
+				if(this.index>=fontList.length){
+					this.index=0;
+				}
+				thisLetter.style.fontFamily = fontList[this.index];
+				thisLetter.style.animation = "none";
+			}, 100)
+	
+			thisLetter.addEventListener("mouseleave", () => {
+				clearInterval(interval)
+			})
+		}
+	
+	
+	}
+	
+	// const logo = new fontChange(me, logoDiv, "h1");
+	// logo.render();
+	
+	for(let i=0; i<changeStrs.length; i++){
+		let oneStr = new fontChange(changeStrs[i], changeEls[i], "p");
+		oneStr.render();
+	}
+</script>
+<script type="text/javascript">
+	let hideMe = document.querySelector(".hide");
+	let more = document.querySelector("#more");
+
+	let moreBool = true;
+	more.addEventListener("click", ()=>{
+		hideMe.classList.toggle("hide")
+		if(moreBool){
+			more.innerHTML="LESS"
+		}else{
+			more.innerHTML="MORE"
+		}
+		moreBool = !moreBool;
+
+	})
+
+</script>
 </body>
 </html>
