@@ -124,12 +124,12 @@ function filterData(e, filtertype){
 	console.log(filter);
 	allProjects.forEach(project =>{
 		if(project.classList.contains(filter)){
-			// project.id = "active";
-			project.classList.remove('hide')
+			project.id = "active";
+			// project.classList.remove('hide')
 
 		}else if(!project.classList.contains(filter)){
-			// project.id = "inactive";
-			project.classList.add('hide');
+			 project.id = "inactive";
+			// project.classList.add('hide');
 		}
 	})
 }
@@ -138,8 +138,8 @@ function allData(e){
 	let allProjects = document.querySelectorAll(".project");
 	let filter = e.target.dataset.filter; // grab the value in the event target's data-filter attribute
 	allProjects.forEach(project =>{
-		// project.id="active"
-		project.classList.remove('hide')
+		project.id="active"
+		// project.classList.remove('hide')
 	})
 }
 
