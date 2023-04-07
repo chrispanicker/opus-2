@@ -1,5 +1,4 @@
 <header>
-	<!-- <p><change></change>&nbsp<change></change> IS A </p> -->
 	<a href={{"../../index.html"|| relativeurl }}><change></change>&nbsp;<change></change>&nbsp;&nbsp;<h2 id="chrisIs"></a>IS A</h2>
 	<div class=dropdown>
 		
@@ -14,8 +13,9 @@
 
 </header>
 
-<script type="text/javascript">
-	let whatAmI = ["GRAPHIC DESIGNER", "ANIMATOR", "FRONT-END CODER", "AMATEUR SKATER", "ENTER YOUR OWN..."]; 
+<script type="module">
+	let whatAmI = ["GRAPHIC DESIGNER", "ANIMATOR", "FRONT-END CODER", "AMATEUR SKATER", "JACK OF ALL TRADES", "ENTER YOUR OWN..."]; 
+	let whatAmIFilter = ["graphics", "anim", "web", "skate", "jack", "ENTER YOUR OWN..."]; 
 	let allCasesVowels = ["a","e","i","o","u","A", "E", "I", "O", "U"];
 	let current = document.querySelector(".current h2");
 	let dropParent = document.querySelector(".dropdown");
@@ -40,6 +40,7 @@
 		for(let i=0; i<whatAmI.length; i++){
 			if (!current.innerHTML.includes(whatAmI[i])){
 				let h2 = document.createElement("h2");
+				h2.dataset.filter = whatAmIFilter[i];
 				h2.innerHTML = whatAmI[i];
 				
 
@@ -63,9 +64,15 @@
 						current.append(input)
 					})
 
-				}else{
-					h2.addEventListener("click", ()=>{
+				}else if(whatAmI[i]==="JACK OF ALL TRADES"){
+					h2.addEventListener("click", (e)=>{
 						current.innerHTML = whatAmI[i];
+						allData(e);
+					})
+				}else{
+					h2.addEventListener("click", (e)=>{
+						current.innerHTML = whatAmI[i];
+						filterData(e, whatAmIFilter[i]);
 					})
 				}
 				dropContent.append(h2);
@@ -97,6 +104,31 @@ function dropWidth(bool){
 	}
 }
 
+function filterData(e, filtertype){
+	let allProjects = document.querySelectorAll(".project");
+	let filter = e.target.dataset.filter; // grab the value in the event target's data-filter attribute
+
+	console.log(filter);
+	allProjects.forEach(project =>{
+		if(project.classList.contains(filter)){
+			// project.id = "active";
+			project.classList.remove('hide')
+
+		}else if(!project.classList.contains(filter)){
+			// project.id = "inactive";
+			project.classList.add('hide');
+		}
+	})
+}
+
+function allData(e){
+	let allProjects = document.querySelectorAll(".project");
+	let filter = e.target.dataset.filter; // grab the value in the event target's data-filter attribute
+	allProjects.forEach(project =>{
+		// project.id="active"
+		project.classList.remove('hide')
+	})
+}
 
 
 </script>

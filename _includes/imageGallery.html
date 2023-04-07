@@ -19,15 +19,13 @@
 			let img = document.createElement("img");
 			img.src = "../assets/images/{{ page.project }}/"+ allFiles[i];
 			img.classList.add("media");
-			img.addEventListener("click", ()=>{
-				img.classList.toggle("zoom");
-				img.classList.toggle("media");
-			})
+			// img.addEventListener("click", ()=>{
+			// 	img.classList.toggle("zoom");
+			// 	img.classList.toggle("media");
+			// })
 			gallery.append(img)
 		}
 
 	}
-
-
 </script>
 

@@ -21,19 +21,19 @@
 	</header>
 <main>
 	<div class="projectHead">
-		<h2>DECKS</h2>
+		<h2>PLANT ST.</h2>
 		<div class="projectInfo">		
 			<div>
-				<p class="projectDesc">AN UNWARRANTED EXPLORATION OF DECONSTRUCTING SKATEBOARDS.&nbsp;
+				<p class="projectDesc">A VISUAL IDENTITY MADE FOR A COMMUNITY OF PLANT STORES IN NYC.&nbsp;
 					<button id="more">MORE</button>
 				</p>
-				<p class="projectFull hide">DECKS is a website and ongoing playful deconstruction of the skateboard, and how far its definition can be pushed. It features masterpieces of human suggestion, such as a Toilet deck, a Crowbar deck, and many more. For those who are interested in adding to the project, there is a blank schematic and suggestion page to submit new deck ideas. <br><br>Made with HTML, CSS, and Javascript.</p>
+				<p class="projectFull hide">I happened to stumble across this street on a whim. I passed by 28th and saw the abundance of greenery, and immediately had to go explore. The identity is based on the variety of typefaces seen throughout the street, and how they can be used together with the Helvetica Neue to create a uniquely "New York" feel to this space. <br><br>Made with Adobe Illustrator.</p>
 			</div>
 			<p>WEB/GRAPHICS</p>	
 		</div>	
 		<div class="projectInfo">
-			<p>2023</p>
-			<a href="" id="link">https://decksdecksdecksdecks.com</a>
+			<p>2022</p>
+			<a href="" id="link"></a>
 		</div>
 	</div>
 
@@ -50,13 +50,13 @@
 
 ---
 <script type="text/javascript">
-	let allFiles = ['decks1.GIF','decks2.GIF','decks3.JPG','decks4.JPG','decks5.JPG','decks6.JPG','decks7.JPG'];
+	let allFiles = ['plantstreet1.jpg','plantstreet2.jpg','plantstreet3.jpg'];
 	let gallery = document.querySelector("#gallery")
 
 	for(let i=0; i<allFiles.length; i++){
 		if(allFiles[i].includes(".mov")||allFiles[i].includes(".mp4")){
 			let vid = document.createElement("video");
-			vid.src="../assets/images/decks/" + allFiles[i];
+			vid.src="../assets/images/plantstreet/" + allFiles[i];
 			vid.classList.add("media");
 			vid.controls=true;
 			vid.muted=true;
@@ -65,7 +65,7 @@
 			gallery.append(vid)
 		}else{
 			let img = document.createElement("img");
-			img.src = "../assets/images/decks/"+ allFiles[i];
+			img.src = "../assets/images/plantstreet/"+ allFiles[i];
 			img.classList.add("media");
 			// img.addEventListener("click", ()=>{
 			// 	img.classList.toggle("zoom");
@@ -79,7 +79,7 @@
 
 
 <script type="text/javascript">
-		let projectLink = "https://decksdecksdecksdecks.com";
+		let projectLink = "";
 		let link = document.querySelector("#link");
 		link.href = projectLink;
 	</script>

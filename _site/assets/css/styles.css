@@ -2,6 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+main h2{
+	letter-spacing: .4vh;
+}
 
 html, body{
 	font-family: "FrGth-Cond";
@@ -14,7 +17,7 @@ footer{
 }
 
 footer button{
-	font-family: "FrGth-DemiCond";
+	font-family: "FrGth-Cond";
 	font-size: 2vh;
 	background: none;
 	color: var(--primary);
@@ -32,7 +35,7 @@ main{
 }
 main h2{
 	line-height: 1;
-	padding-top: 3vh;
+	padding-top: 4vh;
 }
 
 main h2 a{
@@ -40,6 +43,9 @@ main h2 a{
 	color: var(--primary);
 	text-decoration: none;
 }
+
+
+/*nth child thing here for making everything smaller after the fifth??*/
 
 main h2 a:hover{
 	text-decoration: underline .3vh;
@@ -60,8 +66,7 @@ main h2 a:hover + img{
 }
 
 #about{
-
-	margin: 10vh 50vh 10vh 10vh;
+	margin: 20vh 20vh 10vh 10vh;
 	color: var(--primary);
 }
 
@@ -69,6 +74,13 @@ main h2 a:hover + img{
 	font-size: 2vh;
 	font-family: "FrGth-DemiCond";
 }
+
+#about h2 change p{
+	margin: 0;
+	font-size: 10vh;
+	font-family: "FrGth-Cond";
+}
+
 
 #about h2{
 	font-size: 5vh;
@@ -92,6 +104,17 @@ change p:hover{
 	cursor: pointer;
 }
 
+.hide{
+	display: none;
+}
+
+#active a{
+	font-size: 8vw;
+}
+
+#inactive a{
+	font-size: 2vw;
+}
 
 @keyframes shake{
   0% {
@@ -106,4 +129,23 @@ change p:hover{
   100% {
     transform: rotate(0deg);
   }
+}
+
+
+@media screen and (max-width: 950px) {
+  main h2 a{
+		font-size: 5vh;
+	}
+
+	#about{
+		margin: 20vh 10vh 10vh 10vh;
+	}
+
+	#about h2 change p{
+		font-size: 5vh;
+	}
+
+	#about h2{
+		font-size: 2.5vh;
+	}
 }

@@ -1,4 +1,5 @@
 header{
+	letter-spacing: .15vh;
 	position: fixed;
 	top: 0vh;
 	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0), var(--secondary));
@@ -8,7 +9,7 @@ header{
 	width: 100vw;
 	display: flex;
 	font-size: 2vw;
-	padding: 5vh 0 0 5vw;
+	padding: 5vh 0 0 10vh;
 	z-index: 1;
 	text-transform: uppercase;
 }
@@ -16,6 +17,7 @@ header{
 header a{
 	color: var(--primary);
 	text-decoration: none;
+
 }
 
 
@@ -29,6 +31,12 @@ header .dropdown{
 	outline: dotted 0px var(--primary);
 }
 
+header .dropdown h2{
+
+}
+
+
+
 
 header h2:hover{
 	text-decoration: underline .2vw;
@@ -38,6 +46,7 @@ header h2:hover{
 
 header #chrisIs{
 	text-decoration: none;
+/*	letter-spacing: .3vh;*/
 }
 
 header .dropdown-content {
@@ -50,6 +59,7 @@ header .dropdown-content {
 }
 
  header .current{
+ 	font-weight: 100;
  	display: flex;
  	justify-content: space-between;
  	align-items: center;
@@ -58,11 +68,12 @@ header .dropdown-content {
  }
 
  header input{
+ 	font-family: "FrGth-Cond";
 	display: flex;
 	justify-content: center;
 	background-color: transparent;
 	color: var(--primary);
-	width: 100%;
+	width: auto;
 	height: 100%;
 	font-size: 3.2vw;
 	border: none;
@@ -88,5 +99,17 @@ header #arrow:hover{
 
 header change{
 	font-size: 3.2vw;
+}
+
+@media screen and (max-width: 950px) {
+  header{
+  	font-size: 2vh;
+  	padding: 0;
+  	flex-direction: column;
+  }
+
+  header change{
+  	font-size: 3.5vh;
+  }
 }
 
