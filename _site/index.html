@@ -135,19 +135,9 @@ function filterData(e, filtertype){
 
 	allProjects.forEach(project =>{
 		if(project.classList.contains(filter)){
-<<<<<<< Updated upstream
-			// project.id = "active";
-			project.classList.remove('hide')
-
-		}else if(!project.classList.contains(filter)){
-			// project.id = "inactive";
-			project.classList.add('hide');
-=======
 			project.id = "active";
-
 		}else if(!project.classList.contains(filter)){
-			 project.id = "inactive";
->>>>>>> Stashed changes
+			project.id = "inactive";
 		}
 	})
 }
@@ -156,12 +146,8 @@ function allData(e){
 	let allProjects = document.querySelectorAll(".project");
 	let filter = e.target.dataset.filter; // grab the value in the event target's data-filter attribute
 	allProjects.forEach(project =>{
-<<<<<<< Updated upstream
-		// project.id="active"
-=======
 		project.id="active"
->>>>>>> Stashed changes
-		project.classList.remove('hide')
+
 	})
 }
 
