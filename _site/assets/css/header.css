@@ -121,14 +121,25 @@ header change{
   }
 
   header .dropdown{
-  	padding: 1vw 0;
+  	padding: 1vw .5vw;
   }
   header .dropdown-content{
   	margin: 1vh;
+  	padding: 1vw;
   }
 
   header change{
   	font-size: 3.5vh;
   }
+
+  header h2:hover{
+ 	 	text-decoration: underline;
+ 	 	text-underline-offset: .5vh;
+ }
+
+  header .current h2:first-of-type{
+ 	 	text-decoration: underline;
+ 	 	text-underline-offset: .5vh;
+ }
 }
 
