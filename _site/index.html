@@ -12,7 +12,11 @@
 </head>
 <body>
 <header>
-	<a href=../../index.html><change></change>&nbsp;<change></change>&nbsp;&nbsp;<h2 id="chrisIs"></a>IS A</h2>
+	<div class="chrisIsParent">
+	<a href=../../index.html>
+		<change></change>&nbsp;<change></change>&nbsp;&nbsp;
+		<h2 id="chrisIs"></a>IS A</h2>
+	</div>
 	<div class=dropdown>
 		
 		<div class=current>
@@ -28,7 +32,8 @@
 
 <script type="module">
 	let whatAmI = ["GRAPHIC DESIGNER", "ANIMATOR", "FRONT-END CODER", "AMATEUR SKATER", "JACK OF ALL TRADES", "ENTER YOUR OWN..."]; 
-	let whatAmIFilter = ["graphics", "anim", "web", "skate", "jack", "ENTER YOUR OWN..."]; 
+	let whatAmIFilter = ["graphics", "anim", "web", "skate", "jack", "enter"]; 
+	let whatAmIColors = ["#32a852", "#a83232", "#327da8", "#32a887", "white", "#a86d32"]; 
 	let allCasesVowels = ["a","e","i","o","u","A", "E", "I", "O", "U"];
 	let current = document.querySelector(".current h2");
 	let dropParent = document.querySelector(".dropdown");
@@ -53,12 +58,15 @@
 		for(let i=0; i<whatAmI.length; i++){
 			if (!current.innerHTML.includes(whatAmI[i])){
 				let h2 = document.createElement("h2");
+				h2.classList.add(`${whatAmIFilter[i]}`)
 				h2.dataset.filter = whatAmIFilter[i];
 				h2.innerHTML = whatAmI[i];
 				
 
 				if(whatAmI[i]==="ENTER YOUR OWN..."){
 					h2.addEventListener("click", ()=>{
+						let r = document.querySelector(':root');
+						r.style.setProperty('--primary', `${whatAmIColors[whatAmIColors.length-1]}`);
 						current.innerHTML = "";
 						let input = document.createElement("input");
 						input.type = "text";
@@ -79,11 +87,15 @@
 
 				}else if(whatAmI[i]==="JACK OF ALL TRADES"){
 					h2.addEventListener("click", (e)=>{
+						let r = document.querySelector(':root');
+						r.style.setProperty('--primary', `${whatAmIColors[i]}`);
 						current.innerHTML = whatAmI[i];
 						allData(e);
 					})
 				}else{
 					h2.addEventListener("click", (e)=>{
+						let r = document.querySelector(':root');
+						r.style.setProperty('--primary', `${whatAmIColors[i]}`);
 						current.innerHTML = whatAmI[i];
 						filterData(e, whatAmIFilter[i]);
 					})
@@ -121,15 +133,21 @@ function filterData(e, filtertype){
 	let allProjects = document.querySelectorAll(".project");
 	let filter = e.target.dataset.filter; // grab the value in the event target's data-filter attribute
 
-	console.log(filter);
 	allProjects.forEach(project =>{
 		if(project.classList.contains(filter)){
+<<<<<<< Updated upstream
 			// project.id = "active";
 			project.classList.remove('hide')
 
 		}else if(!project.classList.contains(filter)){
 			// project.id = "inactive";
 			project.classList.add('hide');
+=======
+			project.id = "active";
+
+		}else if(!project.classList.contains(filter)){
+			 project.id = "inactive";
+>>>>>>> Stashed changes
 		}
 	})
 }
@@ -138,7 +156,11 @@ function allData(e){
 	let allProjects = document.querySelectorAll(".project");
 	let filter = e.target.dataset.filter; // grab the value in the event target's data-filter attribute
 	allProjects.forEach(project =>{
+<<<<<<< Updated upstream
 		// project.id="active"
+=======
+		project.id="active"
+>>>>>>> Stashed changes
 		project.classList.remove('hide')
 	})
 }

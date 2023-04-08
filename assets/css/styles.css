@@ -2,18 +2,25 @@
 	margin: 0;
 	padding: 0;
 }
-main h2{
+
+h2{
 	letter-spacing: .4vh;
 }
 
 html, body{
 	font-family: "FrGth-Cond";
+
 }
 footer{
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
 	position: fixed;
+	padding-bottom: 5vh;
+	padding-right: 5vh;
 	bottom: 0;
 	right: 0;
-	margin: 0 10vh 5vh 0;
+	background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), var(--secondary));
 }
 
 footer button{
@@ -34,7 +41,7 @@ main{
 	margin: 20vh 10vh 10vh 10vh;
 }
 main h2{
-	line-height: 1;
+	line-height: .9;
 	padding-top: 4vh;
 }
 
@@ -42,6 +49,8 @@ main h2 a{
 	font-size: 10vh;
 	color: var(--primary);
 	text-decoration: none;
+	transition: font-size .3s ease, color .3s ease, opacity .3s ease;
+
 }
 
 
@@ -49,7 +58,7 @@ main h2 a{
 
 main h2 a:hover{
 	text-decoration: underline .3vh;
-	text-underline-offset: .3vh;
+	text-underline-offset: .5vh;
 }
 
 main h2 img{
@@ -66,13 +75,13 @@ main h2 a:hover + img{
 }
 
 #about{
-	margin: 20vh 20vh 10vh 10vh;
+	margin: 20vh 60vh 10vh 10vh;
 	color: var(--primary);
 }
 
 #about p{
 	font-size: 2vh;
-	font-family: "FrGth-DemiCond";
+	font-family: "FrGth-Book";
 }
 
 #about h2 change p{
@@ -87,7 +96,7 @@ main h2 a:hover + img{
 }
 
 #about a{
-		font-family: "FrGth-DemiCond";
+		font-family: "FrGth-Book";
 	font-size: 1.5vh;
 	color: var(--primary);
 }
@@ -104,17 +113,19 @@ change p:hover{
 	cursor: pointer;
 }
 
-.hide{
+/*.hide{
 	display: none;
-}
+}*/
 
 #active a{
-	font-size: 8vw;
+	font-size: 12vh;
 }
 
 #inactive a{
-	font-size: 2vw;
+	font-size: 4vh;
+	opacity: .5;
 }
+
 
 @keyframes shake{
   0% {
@@ -132,14 +143,27 @@ change p:hover{
 }
 
 
+@media screen and (max-width: 1800px) {
+
+	main{
+
+	}
+	#about{
+		margin: 10vh 5vh 10vh 5vh;
+	}
+
+
+}
+
 @media screen and (max-width: 950px) {
+	main{
+		margin: 20vh 5vh 10vh 5vh;
+	}
+
   main h2 a{
 		font-size: 5vh;
 	}
 
-	#about{
-		margin: 20vh 10vh 10vh 10vh;
-	}
 
 	#about h2 change p{
 		font-size: 5vh;
@@ -148,4 +172,14 @@ change p:hover{
 	#about h2{
 		font-size: 2.5vh;
 	}
+
+	#active a{
+		font-size: 5vh;
+	}
+	
+	#inactive a{
+		font-size: 2.5vh;
+		opacity: .5;
+	}
+
 }

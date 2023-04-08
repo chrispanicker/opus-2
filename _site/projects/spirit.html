@@ -21,15 +21,15 @@
 	</header>
 <main>
 	<div class="projectHead">
-		<h2>THE TEN POINT PROGRAM</h2>
+		<h2>SPIRIT QUEST</h2>
 		<div class="projectInfo">		
 			<div>
-				<p class="projectDesc">A TYPOGRAPHIC STUDY, USING LANGUAGE AND VISUALS FROM THE BLACK PANTHER PARTY.&nbsp;
+				<p class="projectDesc">A SERIES OF FRAMES FROM A SKATE FILM, SILKSCREENED FOR AN ANIMATION.&nbsp;
 					<button id="more">MORE</button>
 				</p>
-				<p class="projectFull hide">Using the content from the Black Panther Party's manifesto of the same name, these newsprint posters were inspired by protest posters from the 60's and 70's. The typeface used is VTC Bayard, which is based on protest visuals as well.<br><br>Made with Adobe Illustrator and InDesign.</p>
+				<p class="projectFull hide">Using frames from Spirit Quest(2016), I made a series of 3 screenprinted prints, and used them to put together the frames of the video. I printed using a color blend between a teal and magenta.<br><br>Made with Silkscreen.</p>
 			</div>
-			<p>GRAPHICS</p>	
+			<p>ANIMATION</p>	
 		</div>	
 		<div class="projectInfo">
 			<p>2021</p>
@@ -51,13 +51,13 @@
 
 ---
 <script type="text/javascript">
-	let allFiles = ['mani1.jpg','mani2.jpg','mani3.jpg','mani4.jpg','mani5.jpg',];
+	let allFiles = ['sq.mov','sq1.jpeg','sq2.jpeg','sq3.jpeg'];
 	let gallery = document.querySelector("#gallery")
 
 	for(let i=0; i<allFiles.length; i++){
 		if(allFiles[i].includes(".mov")||allFiles[i].includes(".mp4")){
 			let vid = document.createElement("video");
-			vid.src="../assets/images/manifesto/" + allFiles[i];
+			vid.src="../assets/images/extras/sq/" + allFiles[i];
 			vid.classList.add("media");
 			vid.controls=true;
 			vid.muted=true;
@@ -66,7 +66,7 @@
 			gallery.append(vid)
 		}else{
 			let img = document.createElement("img");
-			img.src = "../assets/images/manifesto/"+ allFiles[i];
+			img.src = "../assets/images/extras/sq/"+ allFiles[i];
 			img.classList.add("media");
 			// img.addEventListener("click", ()=>{
 			// 	img.classList.toggle("zoom");
