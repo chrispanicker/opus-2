@@ -52,8 +52,9 @@
 
 				if(whatAmI[i]==="ENTER YOUR OWN..."){
 					h2.addEventListener("click", ()=>{
-						let r = document.querySelector(':root');
-						r.style.setProperty('--primary', `${whatAmIColors[whatAmIColors.length-1]}`);
+						//local storage for colors and whatamI
+						localStor(i);
+						//input element
 						current.innerHTML = "";
 						let input = document.createElement("input");
 						input.type = "text";
@@ -74,15 +75,14 @@
 
 				}else if(whatAmI[i]==="JACK OF ALL TRADES"){
 					h2.addEventListener("click", (e)=>{
-						let r = document.querySelector(':root');
-						r.style.setProperty('--primary', `${whatAmIColors[i]}`);
+						//colors
+						localStor(i);
 						current.innerHTML = whatAmI[i];
 						allData(e);
 					})
 				}else{
 					h2.addEventListener("click", (e)=>{
-						let r = document.querySelector(':root');
-						r.style.setProperty('--primary', `${whatAmIColors[i]}`);
+						localStor(i);
 						current.innerHTML = whatAmI[i];
 						filterData(e, whatAmIFilter[i]);
 					})
@@ -107,6 +107,20 @@
 			
 		}
 	})
+
+function localStor(i){
+	let r = document.querySelector(':root');
+	if(whatAmI[i]==="ENTER YOUR OWN..."){
+		r.style.setProperty('--primary', `${whatAmIColors[whatAmIColors.length-1]}`);
+		localStorage.setItem("color", `${whatAmIColors[whatAmIColors.length-1]}`);
+		localStorage.setItem("current", `${whatAmI[i]}`);
+	}else{	
+		r.style.setProperty('--primary', `${whatAmIColors[i]}`);
+		localStorage.setItem("color", `${whatAmIColors[i]}`);
+		localStorage.setItem("current", `${whatAmI[i]}`);
+	}
+
+}
 
 function dropWidth(bool){
 	if(bool){

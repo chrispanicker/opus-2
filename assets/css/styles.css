@@ -46,7 +46,7 @@ main h2{
 }
 
 main h2 a{
-	font-size: 10vh;
+	font-size: 5vh;
 	color: var(--primary);
 	text-decoration: none;
 	transition: font-size .3s ease, color .3s ease, opacity .3s ease;

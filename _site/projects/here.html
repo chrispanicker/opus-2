@@ -14,6 +14,7 @@
 
 </head>
 <body>
+	<script>localStorage.setItem("current", "")</script>
 	<header>
 		<a href=../index.html>
 			<change></change>&nbsp;<change></change>
@@ -68,10 +69,6 @@
 			let img = document.createElement("img");
 			img.src = "../assets/images/here/"+ allFiles[i];
 			img.classList.add("media");
-			// img.addEventListener("click", ()=>{
-			// 	img.classList.toggle("zoom");
-			// 	img.classList.toggle("media");
-			// })
 			gallery.append(img)
 		}
 
@@ -119,7 +116,16 @@
 				thisLetter.addEventListener("mouseenter", () =>{
 					this.intervalStart(thisLetter);
 				})
-				
+
+			// 	let randomInterval = setInterval(()=>{
+			// 	this.index++
+			// 		if(this.index>=fontList.length){
+			// 			this.index=0;
+			// 		}
+			// 		thisLetter.style.fontFamily = fontList[this.index];
+			// 		thisLetter.style.animation = "none";
+			// 	}, Math.random() * (40000 - 10000) + 2000)
+
 				this.parent.append(thisLetter);
 			};
 		}
@@ -198,6 +204,21 @@
 				prevButton.innerHTML = `PREV: ${projectTitles[i-1]}`;
 			}
 		}
+	}
+</script>
+<script>
+	let lastColor = localStorage.getItem("color");
+	let r = document.querySelector(':root');
+	r.style.setProperty('--primary', lastColor);
+
+	if(current===""){
+		let current = localStorage.setItem("current", "GRAPHIC DESIGNER");
+		let dropCurrent = document.querySelector(".current h2")
+		dropCurrent.innerHTML = current;
+	}else{
+		let current = localStorage.getItem("current");
+		let dropCurrent = document.querySelector(".current h2")
+		dropCurrent.innerHTML = current;
 	}
 </script>
 </body>

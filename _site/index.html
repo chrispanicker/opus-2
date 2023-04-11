@@ -65,8 +65,9 @@
 
 				if(whatAmI[i]==="ENTER YOUR OWN..."){
 					h2.addEventListener("click", ()=>{
-						let r = document.querySelector(':root');
-						r.style.setProperty('--primary', `${whatAmIColors[whatAmIColors.length-1]}`);
+						//local storage for colors and whatamI
+						localStor(i);
+						//input element
 						current.innerHTML = "";
 						let input = document.createElement("input");
 						input.type = "text";
@@ -87,15 +88,14 @@
 
 				}else if(whatAmI[i]==="JACK OF ALL TRADES"){
 					h2.addEventListener("click", (e)=>{
-						let r = document.querySelector(':root');
-						r.style.setProperty('--primary', `${whatAmIColors[i]}`);
+						//colors
+						localStor(i);
 						current.innerHTML = whatAmI[i];
 						allData(e);
 					})
 				}else{
 					h2.addEventListener("click", (e)=>{
-						let r = document.querySelector(':root');
-						r.style.setProperty('--primary', `${whatAmIColors[i]}`);
+						localStor(i);
 						current.innerHTML = whatAmI[i];
 						filterData(e, whatAmIFilter[i]);
 					})
@@ -120,6 +120,20 @@
 			
 		}
 	})
+
+function localStor(i){
+	let r = document.querySelector(':root');
+	if(whatAmI[i]==="ENTER YOUR OWN..."){
+		r.style.setProperty('--primary', `${whatAmIColors[whatAmIColors.length-1]}`);
+		localStorage.setItem("color", `${whatAmIColors[whatAmIColors.length-1]}`);
+		localStorage.setItem("current", `${whatAmI[i]}`);
+	}else{	
+		r.style.setProperty('--primary', `${whatAmIColors[i]}`);
+		localStorage.setItem("color", `${whatAmIColors[i]}`);
+		localStorage.setItem("current", `${whatAmI[i]}`);
+	}
+
+}
 
 function dropWidth(bool){
 	if(bool){
@@ -229,7 +243,16 @@ function allData(e){
 				thisLetter.addEventListener("mouseenter", () =>{
 					this.intervalStart(thisLetter);
 				})
-				
+
+			// 	let randomInterval = setInterval(()=>{
+			// 	this.index++
+			// 		if(this.index>=fontList.length){
+			// 			this.index=0;
+			// 		}
+			// 		thisLetter.style.fontFamily = fontList[this.index];
+			// 		thisLetter.style.animation = "none";
+			// 	}, Math.random() * (40000 - 10000) + 2000)
+
 				this.parent.append(thisLetter);
 			};
 		}
@@ -260,5 +283,56 @@ function allData(e){
 		oneStr.render();
 	}
 </script>
+<script>
+	let lastColor = localStorage.getItem("color");
+	let r = document.querySelector(':root');
+	r.style.setProperty('--primary', lastColor);
+
+	if(current===""){
+		let current = localStorage.setItem("current", "GRAPHIC DESIGNER");
+		let dropCurrent = document.querySelector(".current h2")
+		dropCurrent.innerHTML = current;
+	}else{
+		let current = localStorage.getItem("current");
+		let dropCurrent = document.querySelector(".current h2")
+		dropCurrent.innerHTML = current;
+	}
+</script>
+<!-- <!-- <script>
+	//Ripped these functions from P5's calculation.js
+	function constrain(n, low, high) {
+	  return Math.max(Math.min(n, high), low);
+	};
+	
+	function map(n, start1, stop1, start2, stop2) {
+	  const newval = (n - start1) / (stop1 - start1) * (stop2 - start2) + start2;
+	
+	  if (start2 < stop2) {
+	    return constrain(newval, start2, stop2);
+	  } else {
+	    return constrain(newval, stop2, start2);
+	  }
+	};
+
+	function getOffset(el) {
+	  const rect = el.getBoundingClientRect();
+	  return {
+	    left: rect.left + window.scrollX,
+	    top: rect.top + window.scrollY
+	  };
+	}
+
+
+
+	let scroll = document.addEventListener("scroll", ()=>{
+		let projects = document.querySelectorAll("main h2 a");
+		for(let i=0; i<projects.length; i++){
+			let offset = getOffset(projects[i]);
+			let mappedValue = map(offset.top, 0, 1920, 12, 2);
+			projects[i].style.fontSize = `${mappedValue}vh`;
+		}
+	})
+
+</script> --> -->
 </body>
 </html>
